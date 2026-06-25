@@ -1,0 +1,1009 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ketrinrin AI - портфолио AI-креатора</title>
+  <meta name="description" content="Портфолио AI-креатора: промо-видео, reels, афиши-анонсы, AI-сериал и творческие видео.">
+  <style>
+    :root {
+      color-scheme: light;
+      --paper: #f7f3ea;
+      --paper-strong: #efe7d8;
+      --ink: #171513;
+      --muted: #6d675e;
+      --line: #d8cebe;
+      --coral: #e85936;
+      --teal: #14796f;
+      --gold: #efbf3b;
+      --green: #627a36;
+      --white: #fffdfa;
+      --shadow: 0 18px 60px rgba(23, 21, 19, .14);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.45;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      padding: 14px clamp(18px, 4vw, 56px);
+      border-bottom: 1px solid rgba(23, 21, 19, .1);
+      background: rgba(247, 243, 234, .88);
+      backdrop-filter: blur(18px);
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 760;
+      letter-spacing: 0;
+    }
+
+    .brand-mark {
+      width: 18px;
+      height: 18px;
+      background: linear-gradient(135deg, var(--coral) 0 50%, var(--teal) 50% 100%);
+      border-radius: 50%;
+      box-shadow: inset 0 0 0 2px rgba(23, 21, 19, .16);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 640;
+    }
+
+    .nav a {
+      min-height: 36px;
+      padding: 8px 12px;
+      border-radius: 999px;
+    }
+
+    .nav a:hover {
+      background: var(--paper-strong);
+      color: var(--ink);
+    }
+
+    .hero {
+      position: relative;
+      min-height: 88vh;
+      display: grid;
+      align-items: center;
+      overflow: hidden;
+      padding: clamp(44px, 8vw, 92px) clamp(18px, 4vw, 56px);
+      isolation: isolate;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -2;
+      background:
+        linear-gradient(90deg, rgba(247, 243, 234, .96) 0%, rgba(247, 243, 234, .86) 36%, rgba(247, 243, 234, .38) 100%),
+        url("assets/thumbnails/project-6.jpg") center / cover no-repeat;
+    }
+
+    .hero-grid {
+      position: absolute;
+      right: clamp(18px, 5vw, 80px);
+      bottom: 42px;
+      z-index: -1;
+      display: grid;
+      grid-template-columns: repeat(4, minmax(68px, 9vw));
+      gap: 10px;
+      width: min(560px, 52vw);
+      opacity: .86;
+    }
+
+    .hero-grid img {
+      aspect-ratio: 9 / 13;
+      height: 100%;
+      object-fit: cover;
+      border: 1px solid rgba(255, 253, 250, .72);
+      box-shadow: 0 12px 30px rgba(23, 21, 19, .2);
+    }
+
+    .hero-grid img:nth-child(2n) {
+      transform: translateY(26px);
+    }
+
+    .hero-content {
+      width: min(820px, 100%);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin: 0 0 18px;
+      color: var(--teal);
+      font-size: 13px;
+      font-weight: 780;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 42px;
+      height: 2px;
+      background: var(--teal);
+    }
+
+    h1 {
+      max-width: 760px;
+      margin: 0;
+      font-size: clamp(44px, 8vw, 104px);
+      line-height: .94;
+      letter-spacing: 0;
+    }
+
+    .lead {
+      max-width: 660px;
+      margin: 24px 0 0;
+      color: #3e3933;
+      font-size: clamp(18px, 2.2vw, 25px);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 34px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 46px;
+      padding: 12px 18px;
+      border: 1px solid var(--ink);
+      border-radius: 999px;
+      background: var(--ink);
+      color: var(--white);
+      font-size: 15px;
+      font-weight: 760;
+      white-space: nowrap;
+      transition: transform .2s ease, background .2s ease, color .2s ease;
+    }
+
+    .button.secondary {
+      background: rgba(255, 253, 250, .58);
+      color: var(--ink);
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(130px, 1fr));
+      gap: 1px;
+      background: var(--line);
+      border-block: 1px solid var(--line);
+    }
+
+    .stat {
+      min-height: 126px;
+      padding: 24px clamp(18px, 4vw, 40px);
+      background: var(--white);
+    }
+
+    .stat strong {
+      display: block;
+      font-size: clamp(28px, 5vw, 52px);
+      line-height: 1;
+    }
+
+    .stat span {
+      display: block;
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 650;
+    }
+
+    .section {
+      padding: clamp(54px, 8vw, 96px) clamp(18px, 4vw, 56px);
+    }
+
+    .section-head {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(280px, 520px);
+      gap: 28px;
+      align-items: end;
+      margin-bottom: 34px;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: clamp(30px, 5vw, 62px);
+      line-height: .98;
+      letter-spacing: 0;
+    }
+
+    .section-head p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    .filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 24px;
+    }
+
+    .filter {
+      min-height: 38px;
+      padding: 8px 14px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: var(--white);
+      color: var(--muted);
+      font: inherit;
+      font-size: 14px;
+      font-weight: 720;
+      cursor: pointer;
+    }
+
+    .filter[aria-pressed="true"] {
+      border-color: var(--ink);
+      background: var(--ink);
+      color: var(--white);
+    }
+
+    .work-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .work-card {
+      position: relative;
+      display: grid;
+      grid-template-rows: auto 1fr;
+      min-height: 100%;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--white);
+      box-shadow: 0 10px 28px rgba(23, 21, 19, .06);
+    }
+
+    .work-card[hidden] {
+      display: none;
+    }
+
+    .thumb {
+      position: relative;
+      aspect-ratio: 9 / 12;
+      overflow: hidden;
+      background: var(--paper-strong);
+    }
+
+    .thumb.square {
+      aspect-ratio: 1 / 1;
+    }
+
+    .thumb img {
+      height: 100%;
+      object-fit: cover;
+      transition: transform .35s ease;
+    }
+
+    .work-card:hover .thumb img {
+      transform: scale(1.04);
+    }
+
+    .tag-row {
+      position: absolute;
+      left: 10px;
+      right: 10px;
+      bottom: 10px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .tag {
+      padding: 5px 8px;
+      border-radius: 999px;
+      background: rgba(255, 253, 250, .9);
+      color: var(--ink);
+      font-size: 11px;
+      font-weight: 760;
+    }
+
+    .work-body {
+      display: grid;
+      gap: 12px;
+      padding: 16px;
+    }
+
+    .work-body h3 {
+      margin: 0;
+      font-size: 20px;
+      line-height: 1.08;
+      letter-spacing: 0;
+    }
+
+    .work-body p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 12px;
+      align-items: center;
+      color: #82796e;
+      font-size: 12px;
+      font-weight: 690;
+      text-transform: uppercase;
+    }
+
+    .services {
+      background: #161513;
+      color: var(--white);
+    }
+
+    .services .section-head p,
+    .services .muted {
+      color: #c8bfb2;
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1px;
+      background: rgba(255, 253, 250, .18);
+      border: 1px solid rgba(255, 253, 250, .18);
+    }
+
+    .service {
+      min-height: 220px;
+      padding: 26px;
+      background: #1f1d1a;
+    }
+
+    .service:nth-child(2) {
+      background: #203734;
+    }
+
+    .service:nth-child(3) {
+      background: #4d462e;
+    }
+
+    .service b {
+      display: block;
+      margin-bottom: 16px;
+      color: var(--gold);
+      font-size: 13px;
+      text-transform: uppercase;
+    }
+
+    .service h3 {
+      margin: 0 0 12px;
+      font-size: 25px;
+      line-height: 1.08;
+    }
+
+    .service p {
+      margin: 0;
+      color: #e2d9cc;
+    }
+
+    .pricing {
+      background: var(--white);
+    }
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 1px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--line);
+      box-shadow: 0 14px 38px rgba(23, 21, 19, .07);
+    }
+
+    .price-card {
+      min-height: 180px;
+      padding: 24px;
+      background: var(--paper);
+    }
+
+    .price-card b {
+      display: block;
+      color: var(--teal);
+      font-size: 13px;
+      text-transform: uppercase;
+    }
+
+    .price-card strong {
+      display: block;
+      margin-top: 16px;
+      font-size: clamp(28px, 4vw, 44px);
+      line-height: 1;
+    }
+
+    .price-card span {
+      display: block;
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 650;
+    }
+
+    .price-note {
+      max-width: 760px;
+      margin: 18px 0 0;
+      color: var(--muted);
+      font-size: 15px;
+      font-weight: 650;
+    }
+
+    .about {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(280px, 520px);
+      gap: clamp(28px, 6vw, 80px);
+      align-items: start;
+    }
+
+    .about-copy {
+      font-size: clamp(24px, 4vw, 42px);
+      line-height: 1.08;
+      letter-spacing: 0;
+    }
+
+    .about-copy p {
+      margin: 0;
+    }
+
+    .about-list {
+      display: grid;
+      gap: 14px;
+    }
+
+    .about-item {
+      padding-block: 16px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .about-item b {
+      display: block;
+      margin-bottom: 4px;
+      color: var(--teal);
+      font-size: 13px;
+      text-transform: uppercase;
+    }
+
+    .about-item p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .contact {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 28px;
+      align-items: center;
+      background: var(--coral);
+      color: var(--white);
+    }
+
+    .contact p {
+      max-width: 720px;
+      margin: 14px 0 0;
+      color: rgba(255, 253, 250, .84);
+      font-size: 18px;
+    }
+
+    .contact .button {
+      border-color: var(--white);
+      background: var(--white);
+      color: var(--ink);
+    }
+
+    .contact-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 22px;
+    }
+
+    .contact-link {
+      display: inline-flex;
+      align-items: center;
+      min-height: 38px;
+      padding: 8px 12px;
+      border: 1px solid rgba(255, 253, 250, .42);
+      border-radius: 999px;
+      background: rgba(255, 253, 250, .12);
+      color: var(--white);
+      font-size: 14px;
+      font-weight: 760;
+    }
+
+    .contact-link:hover {
+      background: rgba(255, 253, 250, .22);
+    }
+
+    .footer {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 22px clamp(18px, 4vw, 56px);
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 650;
+    }
+
+    @media (max-width: 1100px) {
+      .work-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 820px) {
+      .topbar {
+        align-items: flex-start;
+      }
+
+      .nav {
+        display: none;
+      }
+
+      .hero {
+        min-height: 82vh;
+        align-items: end;
+      }
+
+      .hero::before {
+        background:
+          linear-gradient(180deg, rgba(247, 243, 234, .62) 0%, rgba(247, 243, 234, .97) 66%),
+          url("assets/thumbnails/project-6.jpg") center / cover no-repeat;
+      }
+
+      .hero-grid {
+        top: 74px;
+        right: 18px;
+        bottom: auto;
+        grid-template-columns: repeat(4, minmax(48px, 1fr));
+        width: min(410px, calc(100vw - 36px));
+        opacity: .62;
+      }
+
+      .hero-grid img:nth-child(2n) {
+        transform: translateY(16px);
+      }
+
+      .stats,
+      .section-head,
+      .about,
+      .contact {
+        grid-template-columns: 1fr;
+      }
+
+      .stats {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .work-grid,
+      .service-grid,
+      .pricing-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .contact {
+        align-items: start;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .hero-actions,
+      .button {
+        width: 100%;
+      }
+
+      .button {
+        white-space: normal;
+        text-align: center;
+      }
+
+      .stats,
+      .work-grid,
+      .service-grid,
+      .pricing-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .stat {
+        min-height: 104px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar" aria-label="Навигация">
+    <a class="brand" href="#top" aria-label="ketrinrin AI">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <span>ketrinrin AI</span>
+    </a>
+    <nav class="nav" aria-label="Разделы портфолио">
+      <a href="#works">Работы</a>
+      <a href="#services">Форматы</a>
+      <a href="#pricing">Цены</a>
+      <a href="#about">О подходе</a>
+      <a href="#contact">Контакты</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-grid" aria-hidden="true">
+        <img src="assets/thumbnails/project-1.jpg" alt="">
+        <img src="assets/thumbnails/project-4.jpg" alt="">
+        <img src="assets/thumbnails/project-5.jpg" alt="">
+        <img src="assets/thumbnails/project-9.jpg" alt="">
+        <img src="assets/thumbnails/project-10.jpg" alt="">
+        <img src="assets/thumbnails/project-12.jpg" alt="">
+        <img src="assets/thumbnails/creative-2.jpg" alt="">
+        <img src="assets/thumbnails/creative-3.jpg" alt="">
+      </div>
+      <div class="hero-content">
+        <p class="eyebrow">AI video creator / motion storytelling</p>
+        <h1 id="hero-title">Видео, промо и визуальные миры с помощью ИИ</h1>
+        <p class="lead">Создаю AI-видео для брендов, событий и личных проектов: от коротких reels и афиш-анонсов до серийного контента и атмосферных творческих зарисовок.</p>
+        <div class="hero-actions">
+          <a class="button" href="#works">Смотреть работы <span aria-hidden="true">-></span></a>
+          <a class="button secondary" href="ketrinrin-ai-portfolio.pdf" target="_blank" rel="noreferrer">Скачать PDF</a>
+          <a class="button secondary" href="https://disk.yandex.ru/d/xoXUtzBqId7gAg" target="_blank" rel="noreferrer">Открыть исходную папку</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="stats" aria-label="Ключевые факты">
+      <div class="stat">
+        <strong>16</strong>
+        <span>работ в подборке</span>
+      </div>
+      <div class="stat">
+        <strong>13</strong>
+        <span>коммерческих и event-проектов</span>
+      </div>
+      <div class="stat">
+        <strong>3</strong>
+        <span>серии AI-сериала для бренда</span>
+      </div>
+      <div class="stat">
+        <strong>2026</strong>
+        <span>актуальные промо и афиши</span>
+      </div>
+    </section>
+
+    <section class="section" id="works" aria-labelledby="works-title">
+      <div class="section-head">
+        <h2 id="works-title">Выбранные работы</h2>
+        <p>Подборка показывает диапазон задач: коммерческие ролики, промо для фестивалей и чемпионатов, визуальные анонсы, памятные видео и авторские атмосферные эксперименты.</p>
+      </div>
+
+      <div class="filters" aria-label="Фильтр работ">
+        <button class="filter" type="button" data-filter="all" aria-pressed="true">Все</button>
+        <button class="filter" type="button" data-filter="brand">Бренды</button>
+        <button class="filter" type="button" data-filter="event">События</button>
+        <button class="filter" type="button" data-filter="series">AI-сериал</button>
+        <button class="filter" type="button" data-filter="creative">Творчество</button>
+      </div>
+
+      <div class="work-grid" id="work-grid">
+        <article class="work-card" data-category="brand">
+          <div class="thumb"><img src="assets/thumbnails/project-1.jpg" alt="Превью Reel для Aurumix"></div>
+          <div class="work-body">
+            <div class="meta"><span>Reel</span><span>brand video</span></div>
+            <h3>Aurumix</h3>
+            <p>Короткий брендовый ролик с акцентом на визуальное ощущение продукта и быстрый social-first монтаж.</p>
+          </div>
+        </article>
+
+        <article class="work-card" data-category="event">
+          <div class="thumb"><img src="assets/thumbnails/project-2.jpg" alt="Превью афиши для мастер-класса по электро"></div>
+          <div class="work-body">
+            <div class="meta"><span>Motion poster</span><span>event</span></div>
+            <h3>МК по электро</h3>
+            <p>Динамичная видеоафиша для анонса мастер-класса: ритм, считываемый формат и клубная энергия.</p>
+          </div>
+        </article>
+
+        <article class="work-card" data-category="event">
+          <div class="thumb"><img src="assets/thumbnails/project-3.jpg" alt="Превью афиши-анонса для Alya Prokach"></div>
+          <div class="work-body">
+            <div class="meta"><span>Announcement</span><span>social</span></div>
+            <h3>Alya Prokach</h3>
+            <p>Афиша-анонс с фокусом на персону, настроение события и цепкий первый экран.</p>
+          </div>
+        </article>
+
+        <article class="work-card" data-category="event">
+          <div class="thumb"><img src="assets/thumbnails/project-4.jpg" alt="Превью видео для чемпионата Стрелка"></div>
+          <div class="work-body">
+            <div class="meta"><span>Promo</span><span>competition</span></div>
+            <h3>Чемпионат Стрелка</h3>
+            <p>Промо для московского чемпионата: визуальная драматургия, темп и ощущение масштаба события.</p>
+          </div>
+        </article>
+
+        <article class="work-card" data-category="series brand">
+          <div class="thumb"><img src="assets/thumbnails/project-5.jpg" alt="Превью первой серии AI-сериала для Karnity"></div>
+          <div class="work-body">
+            <div class="meta"><span>AI series</span><span>episode 01</span></div>
+            <h3>Karnity, серия 1</h3>
+            <p>Старт брендового AI-сериала: задан визуальный язык, персонажность и тон дальнейшего рассказа.</p>
+          </div>
+        </article>
+
+        <article class="work-card" data-category="series brand">
+          <div class="thumb"><img src="assets/thumbnails/project-6.jpg" alt="Превью второй серии AI-сериала для Karnity"></div>
+          <div class="work-body">
+            <div class="meta"><span>AI series</span><span>episode 02</span></div>
+            <h3>Karnity, серия 2</h3>
+            <p>Продолжение серии с сохранением визуальной преемственности и развитием брендового мира.</p>
+          </div>
+        </article>
+
+        <article class="work-card" data-category="series brand">
+          <div class="thumb"><img src="assets/thumbnails/project-7.jpg" alt="Превью третьей серии AI-сериала для Karnity"></div>
+          <div class="work-body">
+            <div class="meta"><span>AI series</span><span>episode 03</span></div>
+            <h3>Karnity, серия 3</h3>
+            <p>Третий эпизод как закрепление сериального формата: узнаваемость, ритм и цельный визуальный мир.</p>
+          </div>
+        </article>
+
+        <article class="work-card" data-category="event">
+          <div class="thumb"><img src="assets/thumbnails/project-8.jpg" alt="Превью памятного видео для выпускников"></div>
+          <div class="work-body">
+            <div class="meta"><span>Memory video</span><span>school</span></div>
+            <h3>Видео для выпускников</h3>
+            <p>Эмоциональный ролик для памятного события, где важны мягкий тон, история и чувство момента.</p>
+          </div>
+        </article>
+
+        <article class="work-card" data-category="event">
+          <div class="thumb"><img src="assets/thumbnails/project-9.jpg" alt="Превью промо для CDF-2026"></div>
+          <div class="work-body">
+            <div class="meta"><span>Promo</span><span>festival</span></div>
+            <h3>CDF-2026</h3>
+            <p>Промо для фестивального формата: быстрое погружение, ясный вайб и визуальная упаковка события.</p>
+          </div>
+        </article>
+
+        <article class="work-card" data-category="event">
+          <div class="thumb"><img src="assets/thumbnails/project-10.jpg" alt="Превью промо для фестиваля Летник"></div>
+          <div class="work-body">
+            <div class="meta"><span>Promo</span><span>Moscow 2026</span></div>
+            <h3>Фестиваль Летник</h3>
+            <p>Летнее event-промо с городской атмосферой, монтажным драйвом и выразительной обложкой.</p>
+          </div>
+        </article>
+
+        <article class="work-card" data-category="event">
+          <div class="thumb"><img src="assets/thumbnails/project-11.jpg" alt="Превью афиши МК по электро для ketrinrin"></div>
+          <div class="work-body">
+            <div class="meta"><span>Motion poster</span><span>own project</span></div>
+            <h3>ketrinrin electro</h3>
+            <p>Собственный анонс мастер-класса как пример быстрой визуальной упаковки идеи в формат соцсетей.</p>
+          </div>
+        </article>
+
+        <article class="work-card" data-category="event">
+          <div class="thumb"><img src="assets/thumbnails/project-12.jpg" alt="Превью промо GRLZ PWR BATTLE"></div>
+          <div class="work-body">
+            <div class="meta"><span>Promo</span><span>battle</span></div>
+            <h3>GRLZ PWR BATTLE</h3>
+            <p>Энергичное промо для баттла с плотным визуальным ритмом и яркой event-идентичностью.</p>
+          </div>
+        </article>
+
+        <article class="work-card" data-category="brand">
+          <div class="thumb"><img src="assets/thumbnails/project-13.jpg" alt="Превью длинной версии промо для NEW G"></div>
+          <div class="work-body">
+            <div class="meta"><span>Promo</span><span>long version</span></div>
+            <h3>NEW G</h3>
+            <p>Развернутая версия промо-ролика для бренда, рассчитанная на более глубокое погружение в визуал.</p>
+          </div>
+        </article>
+
+        <article class="work-card" data-category="creative">
+          <div class="thumb square"><img src="assets/thumbnails/creative-1.jpg" alt="Превью творческой зарисовки Hourses"></div>
+          <div class="work-body">
+            <div class="meta"><span>Art video</span><span>visual sketch</span></div>
+            <h3>Hourses</h3>
+            <p>Авторская зарисовка на границе fashion, dreamscape и экспериментального AI-видео.</p>
+          </div>
+        </article>
+
+        <article class="work-card" data-category="creative">
+          <div class="thumb square"><img src="assets/thumbnails/creative-2.jpg" alt="Превью творческого видео Angel"></div>
+          <div class="work-body">
+            <div class="meta"><span>Art video</span><span>character mood</span></div>
+            <h3>Angel</h3>
+            <p>Атмосферная работа с персонажем, светом и мягкой кинематографичной образностью.</p>
+          </div>
+        </article>
+
+        <article class="work-card" data-category="creative">
+          <div class="thumb square"><img src="assets/thumbnails/creative-3.jpg" alt="Превью творческого видео New Year's Eve"></div>
+          <div class="work-body">
+            <div class="meta"><span>Art video</span><span>seasonal story</span></div>
+            <h3>New Year's Eve</h3>
+            <p>Праздничная визуальная история с настроением ночного ожидания, света и cinematic-ритма.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section services" id="services" aria-labelledby="services-title">
+      <div class="section-head">
+        <h2 id="services-title">Что можно заказать</h2>
+        <p>Работаю как с коммерческим рекламным и промо-контентом, так и с видео для личных целей: поздравлениями к дню рождения, памятными роликами для выпускников и другими эмоциональными историями.</p>
+      </div>
+
+      <div class="service-grid">
+        <article class="service">
+          <b>01 / Social-first</b>
+          <h3>Reels, shorts и видеоафиши</h3>
+          <p>Короткие ролики для первого касания: анонсы, обложки, промо, вертикальные видео под соцсети.</p>
+        </article>
+        <article class="service">
+          <b>02 / Brand worlds</b>
+          <h3>AI-сериалы и брендовые вселенные</h3>
+          <p>Серийный контент с единым визуальным языком, персонажами, настроением и узнаваемостью.</p>
+        </article>
+        <article class="service">
+          <b>03 / Event energy</b>
+          <h3>Промо для событий и фестивалей</h3>
+          <p>Видеоупаковка мероприятий: от мастер-классов и баттлов до фестивалей, чемпионатов и памятных роликов.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section pricing" id="pricing" aria-labelledby="pricing-title">
+      <div class="section-head">
+        <h2 id="pricing-title">Стоимость</h2>
+        <p>Базовые ориентиры по видео. Финальная стоимость зависит от задачи, длительности, количества сцен, сложности визуала, правок и сроков.</p>
+      </div>
+
+      <div class="pricing-grid" aria-label="Цены на AI-видео">
+        <article class="price-card">
+          <b>15-20 секунд</b>
+          <strong>от 20 000 ₽</strong>
+          <span>Короткий ролик, поздравление, teaser или social-first анонс.</span>
+        </article>
+        <article class="price-card">
+          <b>30-40 секунд</b>
+          <strong>от 35 000 ₽</strong>
+          <span>Промо, видеоафиша или ролик с более развернутой структурой.</span>
+        </article>
+        <article class="price-card">
+          <b>40-60 секунд</b>
+          <strong>от 45 000 ₽</strong>
+          <span>Брендовый, event- или личный ролик с большим числом сцен.</span>
+        </article>
+        <article class="price-card">
+          <b>Больше минуты</b>
+          <strong>от 50 000 ₽</strong>
+          <span>Расширенное видео, серия эпизодов или ролик со сложной драматургией.</span>
+        </article>
+      </div>
+      <p class="price-note">Конечная стоимость рассчитывается индивидуально после обсуждения деталей проекта.</p>
+    </section>
+
+    <section class="section" id="about" aria-labelledby="about-title">
+      <div class="about">
+        <div class="about-copy">
+          <h2 id="about-title">Подход</h2>
+          <p>ИИ здесь не заменяет вкус. Он ускоряет поиск образа, расширяет визуальные возможности и помогает быстрее собрать ролик, который цепляет с первого кадра.</p>
+        </div>
+        <div class="about-list">
+          <div class="about-item">
+            <b>Концепция</b>
+            <p>Формулирую идею, настроение, визуальный язык и роль ролика в коммуникации.</p>
+          </div>
+          <div class="about-item">
+            <b>AI production</b>
+            <p>Генерирую и отбираю визуальные сцены, работаю с персонажностью, стилем, ритмом и переходами.</p>
+          </div>
+          <div class="about-item">
+            <b>Монтаж</b>
+            <p>Собираю материал в цельное видео: темп, акценты, структура, финальная social-ready подача.</p>
+          </div>
+          <div class="about-item">
+            <b>Упаковка</b>
+            <p>Адаптирую работу под анонсы, reels, презентацию, публикацию или коммерческую витрину.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact" id="contact" aria-labelledby="contact-title">
+      <div>
+        <h2 id="contact-title">Готова собрать визуальный язык для вашего проекта</h2>
+        <p>Напишите, какой ролик нужен, где он будет опубликован и какой эффект должен произвести. Можно обсудить коммерческое промо, event-видео, ролик для личного события или серию AI-контента.</p>
+        <div class="contact-links" aria-label="Контакты">
+          <a class="contact-link" href="mailto:e.s.a.22@yandex.ru">e.s.a.22@yandex.ru</a>
+          <a class="contact-link" href="https://www.instagram.com/ketrin__rin?igsh=MWwzc2g2a2ZrN2E0bg%3D%3D&utm_source=qr" target="_blank" rel="noreferrer">Instagram</a>
+          <a class="contact-link" href="https://t.me/ketrinrin" target="_blank" rel="noreferrer">Telegram @ketrinrin</a>
+        </div>
+      </div>
+      <a class="button" href="https://t.me/ketrinrin" target="_blank" rel="noreferrer">Написать в Telegram</a>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span>ketrinrin AI portfolio</span>
+    <span>e.s.a.22@yandex.ru / @ketrinrin</span>
+  </footer>
+
+  <script>
+    const filters = document.querySelectorAll(".filter");
+    const cards = document.querySelectorAll(".work-card");
+
+    filters.forEach((button) => {
+      button.addEventListener("click", () => {
+        const selected = button.dataset.filter;
+
+        filters.forEach((item) => {
+          item.setAttribute("aria-pressed", String(item === button));
+        });
+
+        cards.forEach((card) => {
+          const categories = card.dataset.category.split(" ");
+          card.hidden = selected !== "all" && !categories.includes(selected);
+        });
+      });
+    });
+  </script>
+</body>
+</html>
