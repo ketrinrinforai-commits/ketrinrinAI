@@ -524,6 +524,83 @@
       color: var(--muted);
     }
 
+    .profile {
+      display: grid;
+      grid-template-columns: minmax(240px, 360px) minmax(0, 1fr);
+      gap: clamp(28px, 6vw, 72px);
+      align-items: center;
+    }
+
+    .portrait {
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--paper-strong);
+      box-shadow: 0 16px 42px rgba(23, 21, 19, .12);
+    }
+
+    .portrait img {
+      aspect-ratio: 4 / 5;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .profile-copy {
+      max-width: 660px;
+    }
+
+    .profile-copy h2 {
+      margin-bottom: 22px;
+    }
+
+    .profile-copy h3 {
+      margin: 0;
+      font-size: clamp(30px, 5vw, 54px);
+      line-height: 1;
+    }
+
+    .role {
+      margin: 14px 0 26px;
+      color: var(--teal);
+      font-size: 22px;
+      font-weight: 790;
+    }
+
+    .profile-copy p {
+      max-width: 600px;
+      margin: 0 0 18px;
+      color: #3e3933;
+      font-size: 18px;
+    }
+
+    .portfolio-link {
+      display: inline-flex;
+      align-items: center;
+      min-height: 44px;
+      margin-top: 10px;
+      padding: 10px 14px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: var(--white);
+      color: var(--ink);
+      font-weight: 760;
+    }
+
+    .work-section + .work-section {
+      padding-top: 0;
+    }
+
+    .work-card {
+      color: inherit;
+    }
+
+    .work-link {
+      align-self: end;
+      color: var(--teal);
+      font-size: 13px;
+      font-weight: 780;
+    }
+
     .contact {
       display: grid;
       grid-template-columns: minmax(0, 1fr) auto;
@@ -621,6 +698,7 @@
 
       .stats,
       .section-head,
+      .profile,
       .about,
       .contact {
         grid-template-columns: 1fr;
@@ -672,10 +750,11 @@
       <span>ketrinrin AI</span>
     </a>
     <nav class="nav" aria-label="Разделы портфолио">
-      <a href="#works">Работы</a>
+      <a href="#about">Обо мне</a>
       <a href="#services">Форматы</a>
-      <a href="#pricing">Цены</a>
-      <a href="#about">О подходе</a>
+      <a href="#cases">Кейсы</a>
+      <a href="#dance">Анонсы</a>
+      <a href="#creative">Творчество</a>
       <a href="#contact">Контакты</a>
     </nav>
   </header>
@@ -697,7 +776,7 @@
         <h1 id="hero-title">Видео, промо и визуальные миры с помощью ИИ</h1>
         <p class="lead">Создаю AI-видео для брендов, событий и личных проектов: от коротких reels и афиш-анонсов до серийного контента и атмосферных творческих зарисовок.</p>
         <div class="hero-actions">
-          <a class="button" href="#works">Смотреть работы <span aria-hidden="true">-></span></a>
+          <a class="button" href="#cases">Смотреть кейсы <span aria-hidden="true">-></span></a>
           <a class="button secondary" href="ketrinrin-ai-portfolio.pdf" target="_blank" rel="noreferrer">Скачать PDF</a>
           <a class="button secondary" href="https://disk.yandex.ru/d/xoXUtzBqId7gAg" target="_blank" rel="noreferrer">Открыть исходную папку</a>
         </div>
@@ -723,7 +802,152 @@
       </div>
     </section>
 
-    <section class="section" id="works" aria-labelledby="works-title">
+    <section class="section" id="about" aria-labelledby="about-title">
+      <div class="profile">
+        <div class="portrait">
+          <img src="assets/portrait.png" alt="Сапрыкина Екатерина">
+        </div>
+        <div class="profile-copy">
+          <h2 id="about-title">Обо мне</h2>
+          <h3>Сапрыкина Екатерина</h3>
+          <p class="role">AI-креатор / AI-режиссер</p>
+          <p>Создаю AI-контент для брендов, событий и личных проектов: от промо-роликов, reels и видеоафиш до AI-сериалов, поздравлений и памятных видео.</p>
+          <p>Работала с брендами Karnity и Aurumix, фестивалем Летник, чемпионатами Стрелка и Cever Dance Forever, а также с event- и личными проектами.</p>
+          <a class="portfolio-link" href="https://disk.yandex.ru/d/xoXUtzBqId7gAg" target="_blank" rel="noreferrer">Портфолио и все работы</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section services" id="services" aria-labelledby="services-title">
+      <div class="section-head">
+        <h2 id="services-title">Форматы работы</h2>
+        <p>Работаю как с коммерческим рекламным и промо-контентом, так и с видео для личных целей: поздравлениями к дню рождения, памятными роликами для выпускников и другими эмоциональными историями.</p>
+      </div>
+
+      <div class="service-grid">
+        <article class="service">
+          <b>01 / Social-first</b>
+          <h3>Reels, shorts и видеоафиши</h3>
+          <p>Короткие ролики для первого касания: анонсы, обложки, промо, вертикальные видео под соцсети.</p>
+        </article>
+        <article class="service">
+          <b>02 / Brand worlds</b>
+          <h3>AI-сериалы и брендовые вселенные</h3>
+          <p>Серийный контент с единым визуальным языком, персонажами, настроением и узнаваемостью.</p>
+        </article>
+        <article class="service">
+          <b>03 / Event & personal</b>
+          <h3>Промо и личные видео</h3>
+          <p>Видеоупаковка мероприятий, фестивалей, поздравлений, выпускных и памятных историй.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section work-section" id="cases" aria-labelledby="cases-title">
+      <div class="section-head">
+        <h2 id="cases-title">Кейсы</h2>
+        <p>Коммерческие, event- и брендовые проекты: reels, промо, видеоафиши и AI-сериал.</p>
+      </div>
+      <div class="work-grid">
+        <a class="work-card" href="https://disk.yandex.ru/d/xoXUtzBqId7gAg?path=/Проекты/Reel для Aurumix.mov" target="_blank" rel="noreferrer">
+          <div class="thumb"><img src="assets/thumbnails/project-1.jpg" alt="Превью Reel для Aurumix"></div>
+          <div class="work-body"><div class="meta"><span>Reel</span><span>brand video</span></div><h3>Aurumix</h3><p>Короткий брендовый ролик с акцентом на визуальное ощущение продукта.</p><span class="work-link">Смотреть работу -></span></div>
+        </a>
+        <a class="work-card" href="https://disk.yandex.ru/d/xoXUtzBqId7gAg?path=/Проекты/Видео для чемпионата Стрелка (Москва,2026).mov" target="_blank" rel="noreferrer">
+          <div class="thumb"><img src="assets/thumbnails/project-4.jpg" alt="Превью видео для чемпионата Стрелка"></div>
+          <div class="work-body"><div class="meta"><span>Promo</span><span>competition</span></div><h3>Чемпионат Стрелка</h3><p>Промо для чемпионата: темп, масштаб и визуальная драматургия.</p><span class="work-link">Смотреть работу -></span></div>
+        </a>
+        <a class="work-card" href="https://disk.yandex.ru/d/xoXUtzBqId7gAg?path=/Проекты/ИИ сериал для Karnity, серия 1.mp4" target="_blank" rel="noreferrer">
+          <div class="thumb"><img src="assets/thumbnails/project-5.jpg" alt="Превью первой серии AI-сериала для Karnity"></div>
+          <div class="work-body"><div class="meta"><span>AI series</span><span>episode 01</span></div><h3>Karnity, серия 1</h3><p>Старт брендового AI-сериала и визуального мира.</p><span class="work-link">Смотреть работу -></span></div>
+        </a>
+        <a class="work-card" href="https://disk.yandex.ru/d/xoXUtzBqId7gAg?path=/Проекты/ИИ сериал для Karnity, серия 2.mov" target="_blank" rel="noreferrer">
+          <div class="thumb"><img src="assets/thumbnails/project-6.jpg" alt="Превью второй серии AI-сериала для Karnity"></div>
+          <div class="work-body"><div class="meta"><span>AI series</span><span>episode 02</span></div><h3>Karnity, серия 2</h3><p>Продолжение серии с сохранением визуальной преемственности.</p><span class="work-link">Смотреть работу -></span></div>
+        </a>
+        <a class="work-card" href="https://disk.yandex.ru/d/xoXUtzBqId7gAg?path=/Проекты/ИИ сериал для бренда Karnity. Серия 3.mov" target="_blank" rel="noreferrer">
+          <div class="thumb"><img src="assets/thumbnails/project-7.jpg" alt="Превью третьей серии AI-сериала для Karnity"></div>
+          <div class="work-body"><div class="meta"><span>AI series</span><span>episode 03</span></div><h3>Karnity, серия 3</h3><p>Закрепление сериального формата и узнаваемости.</p><span class="work-link">Смотреть работу -></span></div>
+        </a>
+        <a class="work-card" href="https://disk.yandex.ru/d/xoXUtzBqId7gAg?path=/Проекты/Промо-видео для фестиваля Летник( Москва, 2026).mov" target="_blank" rel="noreferrer">
+          <div class="thumb"><img src="assets/thumbnails/project-10.jpg" alt="Превью промо для фестиваля Летник"></div>
+          <div class="work-body"><div class="meta"><span>Promo</span><span>Moscow 2026</span></div><h3>Фестиваль Летник</h3><p>Летнее event-промо с городской атмосферой.</p><span class="work-link">Смотреть работу -></span></div>
+        </a>
+      </div>
+    </section>
+
+    <section class="section work-section" id="dance" aria-labelledby="dance-title">
+      <div class="section-head">
+        <h2 id="dance-title">Анонсы танцевальных событий</h2>
+        <p>Видеоафиши и промо для танцевальных событий, фестивалей и баттлов.</p>
+      </div>
+      <div class="work-grid">
+        <a class="work-card" href="https://disk.yandex.ru/d/xoXUtzBqId7gAg?path=/Проекты/Афиша-анонс для Alya Prokach.mov" target="_blank" rel="noreferrer">
+          <div class="thumb"><img src="assets/thumbnails/project-3.jpg" alt="Превью афиши-анонса для Alya Prokach"></div>
+          <div class="work-body"><div class="meta"><span>Announcement</span><span>social</span></div><h3>Alya Prokach</h3><p>Афиша-анонс с фокусом на персону и настроение события.</p><span class="work-link">Смотреть работу -></span></div>
+        </a>
+        <a class="work-card" href="https://disk.yandex.ru/d/xoXUtzBqId7gAg?path=/Проекты/Промо для CDF-2026.mov" target="_blank" rel="noreferrer">
+          <div class="thumb"><img src="assets/thumbnails/project-9.jpg" alt="Превью промо для CDF-2026"></div>
+          <div class="work-body"><div class="meta"><span>Promo</span><span>festival</span></div><h3>CDF-2026</h3><p>Промо для Cever Dance Forever: быстрая event-коммуникация.</p><span class="work-link">Смотреть работу -></span></div>
+        </a>
+        <a class="work-card" href="https://disk.yandex.ru/d/xoXUtzBqId7gAg?path=/Проекты/промо видео для NEW G длинная версия.mov" target="_blank" rel="noreferrer">
+          <div class="thumb"><img src="assets/thumbnails/project-13.jpg" alt="Превью длинной версии промо для NEW G"></div>
+          <div class="work-body"><div class="meta"><span>Promo</span><span>long version</span></div><h3>NEW G</h3><p>Развернутая версия промо-ролика для бренда.</p><span class="work-link">Смотреть работу -></span></div>
+        </a>
+        <a class="work-card" href="https://disk.yandex.ru/d/xoXUtzBqId7gAg?path=/Проекты/промо видео GRLZ PWR BATTLE .mov" target="_blank" rel="noreferrer">
+          <div class="thumb"><img src="assets/thumbnails/project-12.jpg" alt="Превью промо GRLZ PWR BATTLE"></div>
+          <div class="work-body"><div class="meta"><span>Promo</span><span>battle</span></div><h3>GRLZ PWR BATTLE</h3><p>Энергичное промо для баттла с яркой event-идентичностью.</p><span class="work-link">Смотреть работу -></span></div>
+        </a>
+        <a class="work-card" href="https://disk.yandex.ru/d/xoXUtzBqId7gAg?path=/Проекты/афиша мк по электро для ketrinrin .mov" target="_blank" rel="noreferrer">
+          <div class="thumb"><img src="assets/thumbnails/project-11.jpg" alt="Превью афиши МК по электро для ketrinrin"></div>
+          <div class="work-body"><div class="meta"><span>Motion poster</span><span>own project</span></div><h3>ketrinrin electro</h3><p>Собственный анонс мастер-класса в формате соцсетей.</p><span class="work-link">Смотреть работу -></span></div>
+        </a>
+      </div>
+    </section>
+
+    <section class="section work-section" id="creative" aria-labelledby="creative-title">
+      <div class="section-head">
+        <h2 id="creative-title">Творческие проекты</h2>
+        <p>Авторские AI-видео, личные истории и экспериментальные визуальные зарисовки.</p>
+      </div>
+      <div class="work-grid">
+        <a class="work-card" href="https://disk.yandex.ru/d/xoXUtzBqId7gAg?path=/Проекты/Афиша для МК по электро.mov" target="_blank" rel="noreferrer">
+          <div class="thumb"><img src="assets/thumbnails/project-2.jpg" alt="Превью МК по электро"></div>
+          <div class="work-body"><div class="meta"><span>Motion poster</span><span>event</span></div><h3>МК по электро</h3><p>Динамичная видеоафиша для анонса мастер-класса.</p><span class="work-link">Смотреть работу -></span></div>
+        </a>
+        <a class="work-card" href="https://disk.yandex.ru/d/xoXUtzBqId7gAg?path=/Творчество/Творческая зарисовка “Hourses”.mov" target="_blank" rel="noreferrer">
+          <div class="thumb square"><img src="assets/thumbnails/creative-1.jpg" alt="Превью творческой зарисовки Hourses"></div>
+          <div class="work-body"><div class="meta"><span>Art video</span><span>visual sketch</span></div><h3>Hourses</h3><p>Авторская зарисовка на границе fashion и dreamscape.</p><span class="work-link">Смотреть работу -></span></div>
+        </a>
+        <a class="work-card" href="https://disk.yandex.ru/d/xoXUtzBqId7gAg?path=/Творчество/Творческое видео “Angel”.mov" target="_blank" rel="noreferrer">
+          <div class="thumb square"><img src="assets/thumbnails/creative-2.jpg" alt="Превью творческого видео Angel"></div>
+          <div class="work-body"><div class="meta"><span>Art video</span><span>character mood</span></div><h3>Angel</h3><p>Атмосферная работа с персонажем, светом и cinematic-образностью.</p><span class="work-link">Смотреть работу -></span></div>
+        </a>
+        <a class="work-card" href="https://disk.yandex.ru/d/xoXUtzBqId7gAg?path=/Творчество/Творческое видео “New Year’s Eve”.mp4" target="_blank" rel="noreferrer">
+          <div class="thumb square"><img src="assets/thumbnails/creative-3.jpg" alt="Превью творческого видео New Year's Eve"></div>
+          <div class="work-body"><div class="meta"><span>Art video</span><span>seasonal story</span></div><h3>New Year's Eve</h3><p>Праздничная визуальная история с настроением ночного ожидания.</p><span class="work-link">Смотреть работу -></span></div>
+        </a>
+        <a class="work-card" href="https://disk.yandex.ru/d/xoXUtzBqId7gAg?path=/Проекты/Памятное видео для выпускников.mov" target="_blank" rel="noreferrer">
+          <div class="thumb"><img src="assets/thumbnails/project-8.jpg" alt="Превью памятного видео для выпускников"></div>
+          <div class="work-body"><div class="meta"><span>Memory video</span><span>personal</span></div><h3>Видео для выпускников</h3><p>Эмоциональный ролик для памятного события.</p><span class="work-link">Смотреть работу -></span></div>
+        </a>
+      </div>
+    </section>
+
+    <section class="section contact" id="contact" aria-labelledby="contact-title">
+      <div>
+        <h2 id="contact-title">Буду рада сотрудничеству</h2>
+        <p>Если вам нужен AI-ролик для бренда, события, личного проекта или визуальной кампании, напишите мне. Обсудим идею, формат, настроение и то, какой эффект должен произвести ролик.</p>
+        <div class="contact-links" aria-label="Контакты">
+          <a class="contact-link" href="mailto:e.s.a.22@yandex.ru">e.s.a.22@yandex.ru</a>
+          <a class="contact-link" href="https://www.instagram.com/ketrin__rin?igsh=MWwzc2g2a2ZrN2E0bg%3D%3D&utm_source=qr" target="_blank" rel="noreferrer">Instagram</a>
+          <a class="contact-link" href="https://t.me/ketrinrin" target="_blank" rel="noreferrer">Telegram @ketrinrin</a>
+        </div>
+      </div>
+      <a class="button" href="https://t.me/ketrinrin" target="_blank" rel="noreferrer">Написать в Telegram</a>
+    </section>
+
+    <section class="section" id="legacy-works" aria-labelledby="works-title" hidden>
       <div class="section-head">
         <h2 id="works-title">Выбранные работы</h2>
         <p>Подборка показывает диапазон задач: коммерческие ролики, промо для фестивалей и чемпионатов, визуальные анонсы, памятные видео и авторские атмосферные эксперименты.</p>
@@ -884,9 +1108,9 @@
       </div>
     </section>
 
-    <section class="section services" id="services" aria-labelledby="services-title">
+    <section class="section services" id="legacy-services" aria-labelledby="legacy-services-title" hidden>
       <div class="section-head">
-        <h2 id="services-title">Что можно заказать</h2>
+        <h2 id="legacy-services-title">Что можно заказать</h2>
         <p>Работаю как с коммерческим рекламным и промо-контентом, так и с видео для личных целей: поздравлениями к дню рождения, памятными роликами для выпускников и другими эмоциональными историями.</p>
       </div>
 
@@ -909,7 +1133,7 @@
       </div>
     </section>
 
-    <section class="section pricing" id="pricing" aria-labelledby="pricing-title">
+    <section class="section pricing" id="legacy-pricing" aria-labelledby="pricing-title" hidden>
       <div class="section-head">
         <h2 id="pricing-title">Стоимость</h2>
         <p>Базовые ориентиры по видео. Финальная стоимость зависит от задачи, длительности, количества сцен, сложности визуала, правок и сроков.</p>
@@ -940,10 +1164,10 @@
       <p class="price-note">Конечная стоимость рассчитывается индивидуально после обсуждения деталей проекта.</p>
     </section>
 
-    <section class="section" id="about" aria-labelledby="about-title">
+    <section class="section" id="legacy-about" aria-labelledby="legacy-about-title" hidden>
       <div class="about">
         <div class="about-copy">
-          <h2 id="about-title">Подход</h2>
+          <h2 id="legacy-about-title">Подход</h2>
           <p>ИИ здесь не заменяет вкус. Он ускоряет поиск образа, расширяет визуальные возможности и помогает быстрее собрать ролик, который цепляет с первого кадра.</p>
         </div>
         <div class="about-list">
@@ -967,9 +1191,9 @@
       </div>
     </section>
 
-    <section class="section contact" id="contact" aria-labelledby="contact-title">
+    <section class="section contact" id="legacy-contact" aria-labelledby="legacy-contact-title" hidden>
       <div>
-        <h2 id="contact-title">Готова собрать визуальный язык для вашего проекта</h2>
+        <h2 id="legacy-contact-title">Готова собрать визуальный язык для вашего проекта</h2>
         <p>Напишите, какой ролик нужен, где он будет опубликован и какой эффект должен произвести. Можно обсудить коммерческое промо, event-видео, ролик для личного события или серию AI-контента.</p>
         <div class="contact-links" aria-label="Контакты">
           <a class="contact-link" href="mailto:e.s.a.22@yandex.ru">e.s.a.22@yandex.ru</a>
