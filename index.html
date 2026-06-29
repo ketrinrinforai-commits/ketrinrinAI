@@ -169,6 +169,8 @@
       font-size: clamp(44px, 8vw, 104px);
       line-height: .94;
       letter-spacing: 0;
+      overflow-wrap: anywhere;
+      text-wrap: balance;
     }
 
     .lead {
@@ -673,27 +675,40 @@
       }
 
       .hero {
-        min-height: 82vh;
-        align-items: end;
+        min-height: auto;
+        align-items: start;
+        padding: 34px 18px 32px;
       }
 
       .hero::before {
         background:
-          linear-gradient(180deg, rgba(247, 243, 234, .62) 0%, rgba(247, 243, 234, .97) 66%),
+          linear-gradient(180deg, rgba(247, 243, 234, .88) 0%, rgba(247, 243, 234, .98) 72%),
           url("assets/thumbnails/project-6.jpg") center / cover no-repeat;
       }
 
       .hero-grid {
-        top: 74px;
-        right: 18px;
-        bottom: auto;
-        grid-template-columns: repeat(4, minmax(48px, 1fr));
-        width: min(410px, calc(100vw - 36px));
-        opacity: .62;
+        display: none;
       }
 
-      .hero-grid img:nth-child(2n) {
-        transform: translateY(16px);
+      .hero-content {
+        width: 100%;
+      }
+
+      h1 {
+        max-width: 100%;
+        font-size: clamp(38px, 12vw, 58px);
+        line-height: 1.02;
+      }
+
+      .lead {
+        max-width: 100%;
+        margin-top: 18px;
+        font-size: 17px;
+        line-height: 1.36;
+      }
+
+      .hero-actions {
+        margin-top: 24px;
       }
 
       .stats,
@@ -720,6 +735,28 @@
     }
 
     @media (max-width: 560px) {
+      .topbar {
+        padding: 12px 16px;
+      }
+
+      .brand {
+        font-size: 15px;
+      }
+
+      .eyebrow {
+        margin-bottom: 14px;
+        font-size: 11px;
+        line-height: 1.2;
+      }
+
+      .eyebrow::before {
+        width: 28px;
+      }
+
+      h1 {
+        font-size: clamp(34px, 11vw, 46px);
+      }
+
       .hero-actions,
       .button {
         width: 100%;
