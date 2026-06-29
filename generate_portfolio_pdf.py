@@ -1,7 +1,5 @@
 from pathlib import Path
 import textwrap
-from urllib.parse import quote
-
 from PIL import Image
 from reportlab.lib import colors
 from reportlab.lib.pagesizes import A4, landscape
@@ -39,10 +37,6 @@ DARK = colors.HexColor("#161513")
 
 def image_path(name):
     return ROOT / "assets" / "thumbnails" / name
-
-
-def work_url(path):
-    return f"{PUBLIC_FOLDER_URL}?path={quote(path)}"
 
 
 def crop_image(src, w, h, name):
@@ -224,29 +218,29 @@ def formats(c):
 
 
 WORKS = [
-    ("Aurumix", "Reel / brand video", "Короткий брендовый ролик с акцентом на визуальное ощущение продукта.", "project-1.jpg", "/Проекты/Reel для Aurumix.mov"),
-    ("МК по электро", "Motion poster / event", "Динамичная видеоафиша для анонса мастер-класса.", "project-2.jpg", "/Проекты/Афиша для МК по электро.mov"),
-    ("Alya Prokach", "Announcement / social", "Афиша-анонс с фокусом на персону и настроение события.", "project-3.jpg", "/Проекты/Афиша-анонс для Alya Prokach.mov"),
-    ("Чемпионат Стрелка", "Promo / competition", "Промо для чемпионата: темп, масштаб и визуальная драматургия.", "project-4.jpg", "/Проекты/Видео для чемпионата Стрелка (Москва,2026).mov"),
-    ("Karnity, серия 1", "AI series / episode 01", "Старт брендового AI-сериала и визуального мира.", "project-5.jpg", "/Проекты/ИИ сериал для Karnity, серия 1.mp4"),
-    ("Karnity, серия 2", "AI series / episode 02", "Продолжение серии с сохранением визуальной преемственности.", "project-6.jpg", "/Проекты/ИИ сериал для Karnity, серия 2.mov"),
-    ("Karnity, серия 3", "AI series / episode 03", "Закрепление сериального формата и узнаваемости.", "project-7.jpg", "/Проекты/ИИ сериал для бренда Karnity. Серия 3.mov"),
-    ("Видео для выпускников", "Memory video / personal", "Эмоциональный ролик для памятного события.", "project-8.jpg", "/Проекты/Памятное видео для выпускников.mov"),
-    ("CDF-2026", "Promo / festival", "Промо для Cever Dance Forever: быстрая event-коммуникация.", "project-9.jpg", "/Проекты/Промо для CDF-2026.mov"),
-    ("Фестиваль Летник", "Promo / Moscow 2026", "Летнее event-промо с городской атмосферой.", "project-10.jpg", "/Проекты/Промо-видео для фестиваля Летник( Москва, 2026).mov"),
-    ("ketrinrin electro", "Motion poster / own project", "Собственный анонс мастер-класса в формате соцсетей.", "project-11.jpg", "/Проекты/афиша мк по электро для ketrinrin .mov"),
-    ("GRLZ PWR BATTLE", "Promo / battle", "Энергичное промо для баттла с яркой event-идентичностью.", "project-12.jpg", "/Проекты/промо видео GRLZ PWR BATTLE .mov"),
-    ("NEW G", "Promo / long version", "Развернутая версия промо-ролика для бренда.", "project-13.jpg", "/Проекты/промо видео для NEW G длинная версия.mov"),
-    ("Hourses", "Art video / visual sketch", "Авторская зарисовка на границе fashion и dreamscape.", "creative-1.jpg", "/Творчество/Творческая зарисовка “Hourses”.mov"),
-    ("Angel", "Art video / character mood", "Атмосферная работа с персонажем, светом и cinematic-образностью.", "creative-2.jpg", "/Творчество/Творческое видео “Angel”.mov"),
-    ("New Year's Eve", "Art video / seasonal story", "Праздничная визуальная история с настроением ночного ожидания.", "creative-3.jpg", "/Творчество/Творческое видео “New Year’s Eve”.mp4"),
+    ("Aurumix", "Reel / brand video", "Короткий брендовый ролик с акцентом на визуальное ощущение продукта.", "project-1.jpg", "https://disk.yandex.ru/i/n-Tyt0s06598Aw"),
+    ("МК по электро", "Motion poster / event", "Динамичная видеоафиша для анонса мастер-класса.", "project-2.jpg", "https://disk.yandex.ru/i/4dXod7YUem3gaQ"),
+    ("Alya Prokach", "Announcement / social", "Афиша-анонс с фокусом на персону и настроение события.", "project-3.jpg", "https://disk.yandex.ru/i/4jrrEth2ro5ObQ"),
+    ("Чемпионат Стрелка", "Promo / competition", "Промо для чемпионата: темп, масштаб и визуальная драматургия.", "project-4.jpg", "https://disk.yandex.ru/i/9jk_YiW2toIehw"),
+    ("Karnity, серия 1", "AI series / episode 01", "Старт брендового AI-сериала и визуального мира.", "project-5.jpg", "https://disk.yandex.ru/i/oF4OPP8Ddt22DQ"),
+    ("Karnity, серия 2", "AI series / episode 02", "Продолжение серии с сохранением визуальной преемственности.", "project-6.jpg", "https://disk.yandex.ru/i/LeotLLIqtAmj8Q"),
+    ("Karnity, серия 3", "AI series / episode 03", "Закрепление сериального формата и узнаваемости.", "project-7.jpg", "https://disk.yandex.ru/i/Z2jBUndX5qV9LA"),
+    ("Видео для выпускников", "Memory video / personal", "Эмоциональный ролик для памятного события.", "project-8.jpg", "https://disk.yandex.ru/i/uzJ02n-GDfx2RQ"),
+    ("CDF-2026", "Promo / festival", "Промо для Cever Dance Forever: быстрая event-коммуникация.", "project-9.jpg", "https://disk.yandex.ru/i/ZQ27M6HstM14Tw"),
+    ("Фестиваль Летник", "Promo / Moscow 2026", "Летнее event-промо с городской атмосферой.", "project-10.jpg", "https://disk.yandex.ru/i/YDnA11Ohk27OTQ"),
+    ("ketrinrin electro", "Motion poster / own project", "Собственный анонс мастер-класса в формате соцсетей.", "project-11.jpg", "https://disk.yandex.ru/i/vBwlEAKkqIqiRg"),
+    ("GRLZ PWR BATTLE", "Promo / battle", "Энергичное промо для баттла с яркой event-идентичностью.", "project-12.jpg", "https://disk.yandex.ru/i/oIzKTllNsydYdQ"),
+    ("NEW G", "Promo / long version", "Развернутая версия промо-ролика для бренда.", "project-13.jpg", "https://disk.yandex.ru/i/ZqnVMVfps6lEDg"),
+    ("Hourses", "Art video / visual sketch", "Авторская зарисовка на границе fashion и dreamscape.", "creative-1.jpg", "https://disk.yandex.ru/i/wbaGg0zH-yCpFg"),
+    ("Angel", "Art video / character mood", "Атмосферная работа с персонажем, светом и cinematic-образностью.", "creative-2.jpg", "https://disk.yandex.ru/i/UNRhiFiIF7se1Q"),
+    ("New Year's Eve", "Art video / seasonal story", "Праздничная визуальная история с настроением ночного ожидания.", "creative-3.jpg", "https://disk.yandex.ru/i/aCnftwED9WZKNQ"),
 ]
 
 WORK_BY_TITLE = {work[0]: work for work in WORKS}
 
 
 def work_card(c, work, x, y, w, h):
-    title, meta, body, img_name, source_path = work
+    title, meta, body, img_name, url = work
     rounded_rect(c, x, y, w, h, WHITE, LINE)
     img_h = h * 0.50
     img = crop_image(image_path(img_name), w - 16, img_h, f"pdf-{img_name}")
@@ -256,7 +250,7 @@ def work_card(c, work, x, y, w, h):
     text_y = draw_text(c, title, x + 12, text_y - 5, 13.5, "Portfolio-Bold", INK, 15, w - 24)
     draw_text(c, body, x + 12, min(text_y - 4, y + 43), 8.4, "Portfolio", MUTED, 10.5, w - 24, max_lines=2)
     draw_text(c, "Смотреть работу ->", x + 12, y + 15, 7.2, "Portfolio-Bold", TEAL)
-    c.linkURL(work_url(source_path), (x, y, x + w, y + h), relative=0)
+    c.linkURL(url, (x, y, x + w, y + h), relative=0)
 
 
 def works_page(c, works, title, subtitle, page_num):
